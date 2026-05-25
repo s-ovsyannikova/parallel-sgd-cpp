@@ -28,11 +28,14 @@ The optimized objective is mean squared error.
 ### Repository structure
 ```text
 .
-├── sgd.cpp
-├── run_exps.sh
 ├── collect_speedup.sh
+├── run_exps.sh
+├── sgd.cpp
 ├── plot_speedup.py
-├── reports
+├── docs/
+|   ├── parallel_sgd_algorithm.pdf
+|   ├── parallel_sgd_experiments.pdf
+|   └── submission_report.pdf
 └── results/
     ├── losses.zip
     ├── results.zip
@@ -89,8 +92,21 @@ The best observed speedup was approximately ```5.82x``` for batch size ```4096``
 
 In general, the parallel version performs better for larger batch sizes, where the cost of gradient computation is high enough to compensate for OpenMP overhead. For small batch sizes or too many threads, synchronization and thread management overhead can reduce speedup.
 
-## Report
-The mathematical description of the algorithm and implementation details are available in the project report: ```report.pdf```.
+## Documentation
+
+Additional project materials are available in `docs/`:
+
+- [`parallel_sgd_algorithm.pdf`](docs/parallel_sgd_algorithm.pdf) - mathematical description of the algorithm
+- [`parallel_sgd_experiments.pdf`](docs/parallel_sgd_experiments.pdf) - implementation details and experimental results
+- [`submission_report.pdf`](docs/submission_report.pdf) - course submission report with motivation and algorithm selection
+
+## AlgoWiki Pages
+
+This project was originally documented as part of AlgoWiki:
+
+- [Mathematical description of stochastic gradient descent algorithm](https://algowiki-project.org/ru/Участница:OvsyannikovaSA/Стохастический_градиентный_спуск)
+- [Program implementation and experimental results](https://algowiki-project.org/ru/Участница:OvsyannikovaSA/Программная_реализация_стохастического_градиентного_спуска)
+
 ## Implementation Stack
 - C++
 - OpenMP
