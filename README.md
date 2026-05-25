@@ -32,9 +32,11 @@ The optimized objective is mean squared error.
 ├── run_exps.sh
 ├── collect_speedup.sh
 ├── plot_speedup.py
-├── losses.zip
-├── results.zip
-└── report.pdf
+├── reports
+└── results/
+    ├── losses.zip
+    ├── results.zip
+    └── parallel_sgd_num_threads_batch_size_speedup_plot.png
 ```
 
 ### Build
@@ -74,6 +76,14 @@ The script builds a 3D surface showing how speedup depends on batch size and the
 
 ## Experimental Results
 The experiments were conducted on the Lomonosov-2 supercomputer at Lomonosov Moscow State University.
+
+<p align="center">
+  <img src="results/parallel_sgd_num_threads_batch_size_speedup_plot.png" alt="Speedup surface for parallel SGD" width="700">
+</p>
+
+<p align="center">
+  <em>Speedup of the OpenMP implementation depending on batch size and the number of threads.</em>
+</p>
 
 The best observed speedup was approximately ```5.82x``` for batch size ```4096``` with ```16``` threads.
 
